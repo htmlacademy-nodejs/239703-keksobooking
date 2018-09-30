@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Oleg Koltun](https://up.htmlacademy.ru/nodejs/2/user/239703).
-* Наставник: `Неизвестно`.
+* Наставник: `Константин Петров`.
 
 ---
 
