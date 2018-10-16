@@ -5,7 +5,7 @@ const appName = require(`./app-name`);
 const appAuthor = require(`./app-author`);
 const licence = require(`./licence`);
 const description = require(`./description`);
-const colors = require('colors/safe');
+const colors = require(`colors/safe`);
 
 function createHelpMessage(commands) {
   return Object.keys(commands).reduce((accum, com) => {
