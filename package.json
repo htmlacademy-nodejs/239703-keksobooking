@@ -1,0 +1,24 @@
+{
+  "name": "keksobooking",
+  "version": "1.0.0",
+  "description": "best app for booking",
+  "main": "index.js",
+  "scripts": {
+    "test:lint": "eslint .",
+    "test": "npm run test:lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Colt-ain/239703-keksobooking.git"
+  },
+  "author": "Oleg Koltun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Colt-ain/239703-keksobooking/issues"
+  },
+  "homepage": "https://github.com/Colt-ain/239703-keksobooking#readme",
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-htmlacademy": "^0.5.2"
+  }
+}
