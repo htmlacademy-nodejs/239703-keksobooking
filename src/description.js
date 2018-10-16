@@ -1,3 +1,5 @@
+'use strict';
+
 const pacageInfo = require(`../package`);
 
 module.exports = {

@@ -1,3 +1,5 @@
+'use strict';
+
 const version = require(`./version`);
 
 function printNotValidMessage(com) {
@@ -11,9 +13,9 @@ function printNotValidMessage(com) {
   return console.log(`\x1b[31m`, notValidMessage);
 }
 
-module.exports = function(flags, validCommands) {
+module.exports = function (flags, validCommands) {
   if (!flags.length) {
-    printNotValidMessage() ;
+    printNotValidMessage();
 
     return process.exit(1);
   }

@@ -1,3 +1,5 @@
+'use strict';
+
 const help = require(`./src/help`);
 const version = require(`./src/version`);
 const appName = require(`./src/app-name`);

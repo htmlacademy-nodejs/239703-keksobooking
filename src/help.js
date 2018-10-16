@@ -1,3 +1,5 @@
+'use strict';
+
 const version = require(`./version`);
 const appName = require(`./app-name`);
 const appAuthor = require(`./app-author`);

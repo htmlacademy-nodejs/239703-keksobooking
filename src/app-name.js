@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   flag: `--app-name`,
   description: `печатает название приложения`,
