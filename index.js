@@ -24,5 +24,4 @@ const enteredFlags = process.argv.filter((item, i) => {
   return false;
 });
 
-
 printCommands(enteredFlags, validCommands);
