@@ -1,10 +1,10 @@
-`use strict`;
+'use strict';
 
 const genereateData = require(`./data-generator`);
 const inquirer = require(`inquirer`);
 const fs = require(`fs`);
 
-module.exports = function() {
+module.exports = function generateAndSaveData() {
   const data = [];
   inquirer
     .prompt([
@@ -44,7 +44,7 @@ module.exports = function() {
               }
             ])
             .then(({fileUrl}) => {
-              fs.readFile(fileUrl, (err) => {
+              return fs.readFile(fileUrl, (err) => {
                 if (err) {
                   writeFile(fileUrl, data);
                 } else {
@@ -57,15 +57,13 @@ module.exports = function() {
                         choices: [`Yes`, `No`]
                       }
                     ]).then(({reWriteFile}) => {
-                      if (reWriteFile === `No`) {
-                        return;
-                      }
+                      if (reWriteFile === `No`) return;
 
                       writeFile(fileUrl, data);
-                    })
+                    });
                 }
               });
-            })
+            });
         })
     });
 };
@@ -77,3 +75,5 @@ function writeFile(fileUrl, fileData) {
     console.log(`The file was saved!`);
   });
 }
+
+
