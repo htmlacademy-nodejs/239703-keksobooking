@@ -7,6 +7,7 @@ const appAuthor = require(`./src/app-author`);
 const licence = require(`./src/licence`);
 const description = require(`./src/description`);
 const printCommands = require(`./src/print`);
+const dialog = require(`./src/dialog`);
 
 const validCommands = {
   help,
@@ -24,4 +25,8 @@ const enteredFlags = process.argv.filter((item, i) => {
   return false;
 });
 
-printCommands(enteredFlags, validCommands);
+if (enteredFlags.length) {
+  printCommands(enteredFlags, validCommands);
+} else {
+  dialog();
+}
