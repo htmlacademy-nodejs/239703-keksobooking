@@ -25,14 +25,14 @@ describe(`data-generator`, () => {
         `http://o0.github.io/assets/images/tokyo/hotel2.jpg`,
         `http://o0.github.io/assets/images/tokyo/hotel3.jpg`];
       const data = generateEntity();
-      const addressArray = data.offer.address.split(`,`).map(c => c.trim());
+      const addressArray = data.offer.address.split(`,`);
 
       function checkValuesFromRange(value, min, max) {
         return +value >= min && +value <= max;
       }
 
       function checkAddress(addresses, [xMin, xMax], [yMin, yMax]) {
-        return (checkValuesFromRange(+addresses[0], xMin, xMax) && checkValuesFromRange(+addresses[1], yMin, yMax))
+        return (checkValuesFromRange(+addresses[0].trim(), xMin, xMax) && checkValuesFromRange(+addresses[1].trim(), yMin, yMax));
       }
 
       function checkDateFormat(date) {
@@ -51,7 +51,7 @@ describe(`data-generator`, () => {
       assert.equal(checkout.includes(data.offer.checkout), true, `Checkout Should contain one of the value`);
       assert.equal(features.includes(data.offer.features), true, `Features should contain one of the value`);
       assert.equal(photos.includes(data.offer.photos), true, `Photos should contain one of the value`);
-      assert.equal(photos.includes(data.offer.description), '', `Description should be a blank string`);
+      assert.equal(photos.includes(data.offer.description), ``, `Description should be a blank string`);
       assert.equal(checkValuesFromRange(data.location.x, 300, 900), true, `Location.x should return values from range`);
       assert.equal(checkValuesFromRange(data.location.y, 150, 500), true, `location.y should return values from range`);
       assert.equal(checkDateFormat(data.date), true, `Date format should be a unix timestamp string`);

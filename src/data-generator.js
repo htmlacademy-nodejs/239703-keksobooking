@@ -41,18 +41,17 @@ function generateGuests() {
 
 function addZero(n) {
   if (n < 10) {
-    n = "0" + n;
+    n = `0${n}`;
   }
   return n;
 }
 
 function generateDate() {
   const now = Date.now();
-  const sevenDays = 7 * 24 * 60 * 60 * 1000;
   const then = new Date();
   then.setDate(then.getDate() - 7);
   const msec = randomFromRange(then.getTime(), now);
-  const date = new Date(parseInt(msec));
+  const date = new Date(parseInt(msec, 10));
   const year = date.getFullYear();
   const day = addZero(date.getDay());
   const month = addZero(date.getMonth());
