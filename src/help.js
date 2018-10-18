@@ -5,11 +5,12 @@ const appName = require(`./app-name`);
 const appAuthor = require(`./app-author`);
 const licence = require(`./licence`);
 const description = require(`./description`);
+const colors = require(`colors/safe`);
 
 function createHelpMessage(commands) {
   return Object.keys(commands).reduce((accum, com) => {
     return `${accum}
-${commands[com].flag} - ${commands[com].description};`;
+${colors.grey(commands[com].flag)} - ${colors.green(commands[com].description)};`;
   }, ``);
 }
 

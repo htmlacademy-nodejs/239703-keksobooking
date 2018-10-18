@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:lint": "eslint .",
-    "test": "npm run test:lint"
+    "test:mocha": "mocha",
+    "test": "npm run test:lint && npm run test:mocha"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/Colt-ain/239703-keksobooking#readme",
   "devDependencies": {
+    "colors": "1.3.2",
     "eslint": "^5.7.0",
-    "eslint-config-htmlacademy": "^0.5.2"
+    "eslint-config-htmlacademy": "^0.5.2",
+    "mocha": "^5.2.0"
   }
 }
