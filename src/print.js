@@ -1,8 +1,5 @@
 'use strict';
 
-const hello = require(`./version`);
-const inquirer = require('inquirer');
-
 function printNotValidMessage(com) {
   if (!com) {
     return;
@@ -11,7 +8,7 @@ function printNotValidMessage(com) {
   const notValidMessage = `Неизвестная команда ${com.flag}.
     Чтобы прочитать правила использования приложения, наберите --help`;
 
-  return console.log(`\x1b[31m`, notValidMessage);
+  console.log(`\x1b[31m`, notValidMessage);
 }
 
 module.exports = async function (flags, validCommands) {
