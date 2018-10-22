@@ -8,6 +8,7 @@ const licence = require(`./src/licence`);
 const description = require(`./src/description`);
 const printCommands = require(`./src/print`);
 const dialog = require(`./src/dialog`);
+const server = require(`./src/server`);
 
 const validCommands = {
   help,
@@ -15,7 +16,8 @@ const validCommands = {
   appName,
   appAuthor,
   licence,
-  description
+  description,
+  server
 };
 
 const enteredFlags = process.argv.filter((item, i) => {

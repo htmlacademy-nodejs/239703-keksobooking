@@ -38,6 +38,19 @@ const types = {
 //   });
 // };
 
+// const printDirectory = (path, files) => {
+//   return `<Doctype html>
+// <html lang="en">
+// <head>
+//   <meta charset="UTF-8">
+//   <title>Directory content</title>
+// </head>
+// <body>
+// <ul></ul>
+// </body>
+// `;
+// };
+
 const readFile = async (path, res) => {
   const data = await readfile(path);
   res.end(data);
@@ -81,3 +94,5 @@ const serverAddress = `http://${hostname}:${port}`;
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${serverAddress}`)
 });
+
+module.exports = server;
