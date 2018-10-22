@@ -90,9 +90,4 @@ const server = http.createServer((req, res) => {
   });
 });
 
-const serverAddress = `http://${hostname}:${port}`;
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${serverAddress}`)
-});
-
 module.exports = server;

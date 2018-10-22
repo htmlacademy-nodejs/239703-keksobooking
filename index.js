@@ -20,15 +20,21 @@ const validCommands = {
   server
 };
 
+let customPort;
+
 const enteredFlags = process.argv.filter((item, i) => {
-  if (i > 1) {
+  if (i === 2) {
     return item;
+  }
+
+  if (i === 3) {
+    customPort = item;
   }
   return false;
 });
 
 if (enteredFlags.length) {
-  printCommands(enteredFlags, validCommands);
+  printCommands(enteredFlags, validCommands, customPort);
 } else {
   dialog();
 }

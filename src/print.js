@@ -11,7 +11,7 @@ function printNotValidMessage(com) {
   console.log(`\x1b[31m`, notValidMessage);
 }
 
-module.exports = async function (flags, validCommands) {
+module.exports = async function (flags, validCommands, port) {
   if (!flags.length) {
     await printNotValidMessage();
 
@@ -21,7 +21,8 @@ module.exports = async function (flags, validCommands) {
   return flags.forEach((flag) => {
     const commands = Object.keys(validCommands).filter((com) => {
       if (validCommands[com].flag === flag) {
-        validCommands[com].execute();
+        validCommands[com].execute(port);
+
         return com;
       }
       return false;
